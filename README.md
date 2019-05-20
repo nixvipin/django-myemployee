@@ -1,58 +1,67 @@
-Django Employee APP
-
+# Django Employee APP
 Employee Management application written in Pyhon (Django).
 
-Components:
+**Components:**
+- admin panel to manage employees' data
+- API to list, add and remove employees
 
-    admin panel to manage employees' data
-    API to list, add and remove employees
+***Note: to run the app using Docker, head over [README-docker.md](README-docker.md)***
 
-Note: to run the app using Docker, head over README-docker.md
+[![Build Status](https://travis-ci.org/marioluan/django-employee-app.svg?branch=master)](https://travis-ci.org/marioluan/django-employee-app)
+[![codebeat badge](https://codebeat.co/badges/09d03419-d881-4ffb-a719-17566c9e9d1a)](https://codebeat.co/projects/github-com-marioluan-django-employee-app)
+[![codecov](https://codecov.io/gh/marioluan/django-employee-app/branch/master/graph/badge.svg)](https://codecov.io/gh/marioluan/django-employee-app)
+[![Dependency Status](https://gemnasium.com/badges/github.com/marioluan/django-employee-app.svg)](https://gemnasium.com/github.com/marioluan/django-employee-app)
 
-Build Status codebeat badge codecov Dependency Status
+---
 
-Pre-requisites:
+**Pre-requisites:**
+- python3 (v3.5)
+- python-pip3 (v9.0.1)
 
-    python3 (v3.5)
-    python-pip3 (v9.0.1)
-
-Install dependencies
-
+## Install dependencies
+```shell
 pip3 install -r requirements.txt
 pip3 install -r requirements-test.txt
+```
 
-Go to employeemanager directory
-
-Before running any of the following commands, you should cd into employeemanager directory:
-
+## Go to employeemanager directory
+Before running any of the following commands, you should
+cd into employeemanager directory:
+```shell
 cd employeemanager
+```
 
-Run migrations
-
+## Run migrations
+```shell
 python manage.py migrate
+```
 
-Create superuser with privileged access
-
+## Create superuser with privileged access
+```shell
 python manage.py createsuperuser
+```
 
-Test
-
+## Test
+```shell
 coverage run --source='.' manage.py test staff.tests
+```
 
-Code coverage report
-
-Note: Run this command only after running the test suite with the command above.
-
+## Code coverage report
+*Note: Run this command only after running the test suite with the command above.*
+```shell
 coverage html
 # the report will be located at `htmlcov/index.html`
+```
 
-Start app
+## Start app
+```shell
+python manage.py runserver localhost:8000
+```
 
-python3 manage.py runserver localhost:8000
+---
 
-API usage
+## API usage
+To interact with the API, log in at [http://localhost:8000/staff/api-auth/](http://localhost:8000/staff/api-auth/) with the superuser created before. After log in, you might be redirected to an interactive interface.
 
-To interact with the API, log in at http://localhost:8000/staff/api-auth/ with the superuser created before. After log in, you might be redirected to an interactive interface.
-Admin
-
-Head over http://localhost:8000/staff/admin/ to access the admin.
+## Admin
+Head over [http://localhost:8000/staff/admin/](http://localhost:8000/staff/admin/) to access the admin.
