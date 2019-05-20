@@ -1,0 +1,3 @@
+coverage==4.3.4
+flake8==3.2.1
+factory_boy==2.8.1
